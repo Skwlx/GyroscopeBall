@@ -1,6 +1,6 @@
 import React from 'react';
 import {View} from 'react-native';
-import Ball from '../atoms/Ball';
+import Ball from './Ball';
 import QyroscopeText from '../atoms/QyroscopeText';
 
 interface QyroscopeBoxProps {

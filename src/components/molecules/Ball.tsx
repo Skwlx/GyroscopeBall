@@ -28,11 +28,12 @@ const Ball: React.FC<BallProps> = ({AccX, AccY}) => {
     } else if (newYValue <= -window.height / 2 + 30) {
       newYValue = -window.height / 2 + 30;
     }
-    if (newXValue >= window.width / 2 + window.width / 6) {
-      newXValue = window.width / 2 + window.width / 6;
-    } else if (newXValue <= -(window.width / 4)) {
-      newXValue = -window.width / 4;
+    if (newXValue >= window.width / 2) {
+      newXValue = window.width / 2;
+    } else if (newXValue <= -(window.width / 2)) {
+      newXValue = -window.width / 2;
     }
+    console.log(window.width / 2, newXValue);
     prevAccValue.value = {
       x: newXValue,
       y: newYValue,
@@ -62,7 +63,7 @@ const Ball: React.FC<BallProps> = ({AccX, AccY}) => {
   };
 
   return (
-    <Animated.View style={animatedStyles.motion}>
+    <Animated.View style={[animatedStyles.motion, styles.box]}>
       <View style={styles.ball} />
     </Animated.View>
   );
